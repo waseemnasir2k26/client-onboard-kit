@@ -1,0 +1,28 @@
+# virtualenvs (any venv lives inside the repo and is never committed)
+.venv/
+venv/
+env/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# real client briefs and generated packs - never commit a client's terms
+client.yaml
+clients/
+pack/
+packs/
+out/
+!examples/**
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,208 @@
+# =============================================================================
+# client-onboard-kit - example brief
+#
+# Everything below is FICTIONAL. Replace it with your own details and your
+# client's, then run:
+#
+#     client-onboard-kit build client.yaml --out ./pack
+#
+# NOT LEGAL ADVICE. The documents this produces are drafting starting points
+# written by engineers, not by a lawyer, and are not certified for any
+# jurisdiction. Have a qualified lawyer review anything you intend to sign.
+#
+# Rules of the file:
+#   * Every field referenced by a template must exist, or the build fails and
+#     names the exact field and template. Nothing is silently blanked.
+#   * A field used only inside a branch you did not choose (the one-way NDA
+#     clause when you picked a mutual NDA) is not required.
+#   * Dates can be YAML dates (2026-09-14) or free text ("on signature").
+# =============================================================================
+
+# --- presentation -----------------------------------------------------------
+format:
+  date_format: "%d %B %Y"   # Python strftime. US style: "%B %d, %Y"
+  currency_code: GBP
+  currency_symbol: "£"
+  currency_position: prefix # prefix -> £1,200.00 | suffix -> 1.200,00 kr
+  decimals: 2
+  thousands_separator: ","
+
+# --- you --------------------------------------------------------------------
+provider:
+  legal_name: Perihelion Studio Ltd
+  trading_name: Perihelion
+  company_number: "SC000000"
+  contact_name: Iris Vantongeren
+  contact_title: Founder
+  email: iris@perihelion-studio.example
+  phone: "+44 117 000 0000"
+  address: |-
+    Unit 4, Kestrel Yard
+    Bristol BS1 0AA
+    United Kingdom
+  website: https://perihelion-studio.example
+
+# --- them -------------------------------------------------------------------
+client:
+  legal_name: Marlowe & Finch Roasters Ltd
+  short_name: Marlowe & Finch
+  contact_name: Priya Ramachandran
+  contact_title: Operations Director
+  email: priya@marlowefinch.example
+  address: |-
+    12 Ashgrove Lane
+    Bristol BS6 0ZZ
+    United Kingdom
+  website: https://marlowefinch.example
+
+# --- the work ---------------------------------------------------------------
+engagement:
+  title: Wholesale ordering portal
+  summary: >-
+    Design and build a self-service ordering portal for Marlowe & Finch wholesale
+    accounts, replacing the current email-and-spreadsheet process, and migrate the
+    existing 60 accounts onto it.
+  start_date: 2026-09-14
+  end_date: 2026-11-20
+  revision_rounds: 2
+
+  deliverables:
+    - name: Discovery and information architecture
+      description: Account model, order states, pricing tiers, and a clickable flow map.
+      due: 2026-09-25
+    - name: Portal build
+      description: >-
+        Authenticated account area, standing-order templates, order history,
+        CSV export, and an admin view for the Marlowe & Finch team.
+      due: 2026-11-03
+    - name: Migration and handover
+      description: >-
+        Import of the 60 existing wholesale accounts, one training session, and a
+        written runbook.
+      due: 2026-11-20
+
+  milestones:
+    - name: Deposit
+      date: on signature
+      amount: 5400
+      description: Payable before work starts.
+    - name: Design sign-off
+      date: 2026-09-25
+      amount: 3600
+      description: Flow map and interface direction approved in writing.
+    - name: Launch
+      date: 2026-11-20
+      amount: 9000
+      description: Portal live and accounts migrated.
+
+  out_of_scope:
+    - Native iOS or Android applications.
+    - Integration with the Marlowe & Finch accounting system.
+    - Copywriting, photography, or product data entry.
+    - Ongoing hosting, monitoring, or support after handover.
+    - Search engine optimisation work of any kind.
+
+  assumptions:
+    - Product and pricing data is supplied as a single clean CSV.
+    - One named approver signs off each stage within three working days.
+    - The existing domain and DNS remain under client control.
+
+# --- money ------------------------------------------------------------------
+commercial:
+  total_fee: 18000
+  deposit_percent: 30
+  payment_terms_days: 14
+  late_fee_percent_per_month: 2
+  change_request_rate: 95
+  change_request_unit: hour
+  change_request_minimum_hours: 2
+  expenses_policy: >-
+    Third-party costs (hosting, licences, stock assets) are re-charged at cost and
+    only with prior written approval.
+  kill_fee_percent: 25
+
+# --- legal ------------------------------------------------------------------
+legal:
+  jurisdiction: England and Wales
+  courts: the courts of England and Wales
+  termination_notice_days: 14
+  confidentiality_term_years: 3
+  ip_assignment_on_final_payment: true
+  liability_cap: the total fees actually paid by the Client under this Agreement
+  portfolio_rights: true      # may you show the work in your portfolio?
+  nda:
+    include_in_pack: true
+    type: mutual              # mutual | one_way
+    # disclosing_party: ...   # REQUIRED only when type is one_way
+    term_years: 3
+    purpose: >-
+      Evaluating and delivering the wholesale ordering portal described in the
+      accompanying Service Agreement.
+
+# --- how you two talk -------------------------------------------------------
+comms:
+  primary_channel: a shared Slack Connect channel
+  secondary_channel: email, for anything that needs a paper trail
+  response_time_hours: 24
+  working_hours: 09:00-17:30, Monday to Friday
+  timezone: Europe/London
+  weekly_checkin: Tuesdays, 10:00, 30 minutes
+  approver_name: Priya Ramachandran
+  approver_title: Operations Director
+  approval_window_days: 3
+  escalation_contact: Tom Finch, Managing Director
+
+# --- what has to happen in week one ----------------------------------------
+onboarding:
+  questionnaire_due: 2026-09-12
+
+  client_owes:
+    - item: Signed Service Agreement and NDA
+      owner: Priya Ramachandran
+      due: 2026-09-10
+    - item: Deposit invoice paid
+      owner: Marlowe & Finch accounts
+      due: 2026-09-12
+    - item: Completed intake questionnaire
+      owner: Priya Ramachandran
+      due: 2026-09-12
+    - item: Product and pricing CSV export
+      owner: Marlowe & Finch operations
+      due: 2026-09-16
+
+  access_checklist:
+    - Domain registrar account (delegated access, not a shared password)
+    - DNS management for marlowefinch.example
+    - Hosting or server access for the current site
+    - Analytics property, with a named admin
+    - Transactional email provider account
+    - A test wholesale account with realistic data
+
+  brand_assets:
+    - Logo in vector format (SVG or AI)
+    - Brand guidelines or, failing that, the hex codes actually in use
+    - Licensed webfont files or the font licence reference
+    - Product photography at 2000px or larger
+
+  success_criteria:
+    - 80% of wholesale orders placed through the portal within 60 days of launch.
+    - Order-entry admin time reduced from roughly 6 hours a week to under 1.
+    - No manual re-keying of orders into the fulfilment sheet.
+
+  hard_deadlines:
+    - name: Portal live for wholesale accounts
+      date: 2026-11-20
+      why: Christmas wholesale ordering opens on 24 November.
+
+# --- the welcome email ------------------------------------------------------
+welcome:
+  signature_tool: Documenso
+  next_actions:
+    - Sign the Service Agreement and NDA (both are in this pack).
+    - Pay the deposit invoice so the 14 September start date holds.
+    - Fill in the intake questionnaire - it takes about 20 minutes.
+  kickoff_call:
+    date: 2026-09-15
+    time: "10:00"
+    duration_minutes: 45
+    link: https://meet.perihelion-studio.example/kickoff

@@ -1,0 +1,5 @@
+# templates/*.md are Jinja2 source, not prose.
+# A markdown formatter reflows the tables and indents {% endfor %}, silently
+# breaking rendering. Do not format them.
+templates/
+examples/

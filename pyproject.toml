@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "client-onboard-kit"
+version = "0.1.0"
+description = "One YAML brief in, a complete client onboarding pack out: agreement, NDA, intake questionnaire, kickoff doc, welcome email."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Waseem Nasir", email = "hello@skynetjoe.com" }]
+keywords = ["freelance", "agency", "onboarding", "contract", "templates", "jinja2", "cli"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Other Audience",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Office/Business",
+  "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = [
+  "Jinja2>=3.1",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/waseemnasir2k26/client-onboard-kit"
+Issues = "https://github.com/waseemnasir2k26/client-onboard-kit/issues"
+
+[project.scripts]
+client-onboard-kit = "client_onboard_kit.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["client_onboard_kit"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"templates" = "client_onboard_kit/templates"
+"client.example.yaml" = "client_onboard_kit/client.example.yaml"
+
+[tool.hatch.build.targets.sdist]
+include = ["client_onboard_kit", "templates", "tests", "examples", "client.example.yaml", "README.md", "LICENSE", "TOPICS.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -2,6 +2,11 @@
 
 One YAML brief about a new client turns into the whole first-week paperwork pack: service agreement, NDA, scoping questionnaire, kickoff doc and welcome email.
 
+## Status
+
+Last reviewed: September 2026 · release v2026.09
+
+
 ```console
 $ client-onboard-kit init
 Wrote client.example.yaml

@@ -4,7 +4,7 @@ One YAML brief about a new client turns into the whole first-week paperwork pack
 
 ## Status
 
-Last reviewed: September 2026 · release v2026.09
+Last reviewed: October 2026 · release v2026.10
 
 
 ```console
@@ -236,3 +236,11 @@ agencies. https://skynetjoe.com - hire on Fiverr https://fiverr.com/agencies/sky
 ## License
 
 MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Waseem Nasir / SkynetLabs.
+
+## Work with SkynetLabs
+
+Built by [Waseem Nasir](https://www.skynetjoe.com/?utm_source=github&utm_medium=readme&utm_campaign=client-onboard-kit) at SkynetLabs — n8n + AI automation for small businesses.
+
+- Hire on Fiverr: https://www.fiverr.com/agencies/skynetjoellc
+- Hire on Upwork: https://www.upwork.com/freelancers/muhammadwaseemnasir
+- Book a free call: https://calendly.com/skynetlabs/schedule-a-free-consultation

@@ -44,6 +44,6 @@ These are templates. They were not drafted by a lawyer, are not certified for an
 
 ## Built by SkynetLabs
 
-Built by [SkynetLabs](https://skynetjoe.com). Questions: info@skynetjoe.com
+Built by [SkynetLabs](https://skynetjoe.com). Questions: waseem@skynetjoe.com
 
 Need this wired into your business? SkynetLabs builds voice agents, n8n back offices and sites that convert → https://skynetjoe.com
